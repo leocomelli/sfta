@@ -24,7 +24,7 @@ leonardo.comelli@gmail.com}
 \maketitle
 
 \begin{abstract}
-Com o aumento dos cursos no formato EAD, a avaliação automática de respostas curtas se tornou uma necessidade, visando poupar tempo do professor e diminuindo o tempo de \textit{feedback} para o aluno. Este artigo apresenta, em linhas gerais, alguns artigos que já propuseram uma solução para esta tarefa, além de executar uma prova de conceito utilizando \textit{word embeddings} previamente treinadas contra o \textit{corpus} disponibilizado no \textit{SemEval 2013 - Task 7}. O melhor resultado obtido foi uma acurácia de 82,187\%.
+Com o aumento dos cursos no formato EAD, a avaliação automática de respostas curtas se tornou uma necessidade, visando poupar tempo do professor e diminuindo o tempo de \textit{feedback} para o aluno. Este artigo apresenta, em linhas gerais, alguns artigos que já propuseram uma solução para está tarefa, além de executar uma prova de conceito utilizando \textit{word embeddings} previamente treinadas contra o \textit{corpus} disponibilizado no \textit{SemEval 2013 - Task 7}. O melhor resultado obtido foi uma acurácia de 82,187\%.
 \end{abstract}
 
 
@@ -79,10 +79,10 @@ A última etapa da arquitetura é a principal, onde o esforço em validar a prop
 
 Para esta etapa é necessário uma ferramenta que consiga medir a similaridade entre a resposta do aluno e uma ou mais respostas-referência. A opção escolhida para a prova de conceito foi o Doc2Vec \cite{Mikolov:2016} que utiliza \textit{word embeddings} treinadas previamente contra as respostas-referência e/ou corretas para realizar a classificação textual. 
 
-O resultado esperado ao término da execução do fluxo é o quão uma resposta de um aluno é similar a uma respota referência, esta similaridade é representada por uma porcentagem.
+O resultado esperado ao término da execução do fluxo é o quão uma resposta de um aluno é similar a uma resposta referência, esta similaridade é representada por uma porcentagem.
 
 \subsection{Corpus}
-O \textit{corpus} utilizado para a validação da proposta foi o disponibilizado no \textit{SemEval 2013 - Task 7}\cite{Dzikovska:2013}. Este corpus, na sua totalidade,  é composto por 56 questões sobre eletrecidade/eletrônica com 3000 respostas e 197 questões de 15 domínios variados com 10000 respostas, todas as perguntas e respostas estão na língua inglesa. As respostas estão classificadas em: \textit{5-way} (correta, parcialmente correta, contraditória, irrelevante e fora do domínio), \textit{3-way} (correta, contraditória e incorreta) e \textit{2-way} (correta e incorreta).
+O \textit{corpus} utilizado para a validação da proposta foi o disponibilizado no \textit{SemEval 2013 - Task 7}\cite{Dzikovska:2013}. Este corpus, na sua totalidade,  é composto por 56 questões sobre eletricidade/eletrônica com 3000 respostas e 197 questões de 15 domínios variados com 10000 respostas, todas as perguntas e respostas estão na língua inglesa. As respostas estão classificadas em: \textit{5-way} (correta, parcialmente correta, contraditória, irrelevante e fora do domínio), \textit{3-way} (correta, contraditória e incorreta) e \textit{2-way} (correta e incorreta).
 
 \begin{figure}[h]
 \centering
@@ -90,7 +90,7 @@ O \textit{corpus} utilizado para a validação da proposta foi o disponibilizado
 \caption{Corpus: SemEval 2013 - Task 7 - Formato XML}
 \end{figure}
 
-Para a validação da prova de conceito foi retirado uma amostra das questões sobre eletrecidade/eletrônica, sendo: 1 questão com 151 respostas classificadas no \textit{2-way} (correta e incorreta). Para facilitar a execução, a amostra das questões que serão utilizadas foram convertidas do formato XML (conforme Figura 2) para dois arquivos no formato texto, onde um contêm apenas as questões corretas e o outro as incorretas (apresentado na Figura 3).
+Para a validação da prova de conceito foi retirado uma amostra das questões sobre eletricidade/eletrônica, sendo: 1 questão com 151 respostas classificadas no \textit{2-way} (correta e incorreta). Para facilitar a execução, a amostra das questões que serão utilizadas foram convertidas do formato XML (conforme Figura 2) para dois arquivos no formato texto, onde um contêm apenas as questões corretas e o outro as incorretas (apresentado na Figura 3).
 
 \begin{figure}[h]
 \centering
@@ -148,7 +148,7 @@ Comparando os resultados com outras pesquisa (vide Figura 5), fica evidente a pr
 \caption{Resultados: Comparação com outras pesquisas}
 \end{figure}
 
-\section{Conclusão e Trabalhos Futuros}
+\section{Conclusão}
 O foco deste artigo foi a avaliação automática de respostas curtas, demonstrando de forma prática a possibilidade de validar a similaridade entre a resposta do aluno e uma ou mais respostas-referência utilizando técnicas de \textit{word embeddings} através do Doc2Vec. Durante a pesquisa, notou-se que a similaridade entre respostas curtas pode ser muito sensível dependendo do domínio e os resultados podem, em alguns casos, conter "falso-verdadeiro".
 
 Os resultados obtidos não estão acima do estado da arte para a tarefa proposta, porém são satisfatórios e importantes para a evolução da arquitetura apresentada.
